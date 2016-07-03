@@ -4,21 +4,9 @@ from util.history import load_history
 
 
 if __name__ == '__main__':
-    # Create Players
-    players = []
-
-    player1 = Player('Medina', 'blue')
-    players.append(player1)
-
-    player2 = Player('Corliss', 'white')
-    players.append(player2)
-
     # Load players
-    players = []
-    history = load_history()
-    for player_name in history:
-        player = history[player_name]
-        players.append(Player(player_name, player['color'], player['health'], player['wins']))
+    players = [Player(player_name, player['color'], player['health'], player['wins'])
+               for player_name, player in load_history().items()]
 
     # Create the main window
     window = Window()

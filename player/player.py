@@ -1,6 +1,6 @@
 class Player:
 
-    def __init__(self, name, color, health=20, wins=0):
+    def __init__(self, name="Anon", color="white", health=20, wins=0):
         """Create a new player"""
         self.name = name
         self.color = color

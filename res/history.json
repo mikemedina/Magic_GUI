@@ -1,1 +1,1 @@
-{"Medina": {"wins": 1, "color": "blue", "health": 5}, "Lori": {"wins": 2, "color": "white", "health": 10}, "Jimmy": {"wins": 3, "color": "green", "health": 15}}
+{"Medina": {"color": "blue", "wins": 3, "health": 10}, "Jimmy": {"color": "green", "wins": 2, "health": 5}, "Lori": {"color": "white", "wins": 1, "health": 0}, "Callie": {"health": 15, "wins": 4, "color": "purple"}}

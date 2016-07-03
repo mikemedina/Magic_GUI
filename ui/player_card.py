@@ -14,10 +14,10 @@ class PlayerCard:
 
         # Player representations
         self.player = player
-        self.player_cards.append(self)
+        PlayerCard.player_cards.append(self)
 
         # Container
-        col_num = len(self.player_cards)-1
+        col_num = len(PlayerCard.player_cards)-1
         self.frm_container = Frame(parent_frame, bg='black')
         self.frm_container.grid(row=0, column=col_num)
 
@@ -25,23 +25,30 @@ class PlayerCard:
         self.frm_wins = Frame(self.frm_container, bg='black')
         self.frm_wins.grid_columnconfigure(0, weight=1)
         self.frm_wins.grid_columnconfigure(1, weight=1)
+        self.frm_wins.grid_columnconfigure(2, weight=1)
         self.frm_wins.pack(fill=X)
+
+        # Close button
+        self.btn_close = Button(self.frm_wins, text='x', font=wins_font, bd=1,
+            command=lambda: self.remove_player())
+        self.btn_close.configure(fg='white', bg='black', bd=0)
+        self.btn_close.grid(row=0, column=0, sticky=NW)
 
         self.lbl_wins = Label(self.frm_wins, font=gen_font,
             text=self.player.wins, bg='black', fg='white')
-        self.lbl_wins.grid(row=0, rowspan=2, columnspan=2)
+        self.lbl_wins.grid(row=0, column=1, rowspan=2, columnspan=2)
 
         # Wins up
         self.btn_wins_up = Button(self.frm_wins, text='+', font=wins_font,
             command=lambda: self.update_wins(1))
         self.btn_wins_up.configure(fg='white', bg='black', bd=0)
-        self.btn_wins_up.grid(row=0, column=1, sticky=S)
+        self.btn_wins_up.grid(row=0, column=2, sticky=S)
 
         # Wins down
         self.btn_wins_down = Button(self.frm_wins, text='-', font=wins_font,
             command=lambda: self.update_wins(-1))
         self.btn_wins_down.configure(fg='white', bg='black', bd=0)
-        self.btn_wins_down.grid(row=1, column=1, sticky=N)
+        self.btn_wins_down.grid(row=1, column=2, sticky=N)
 
         # Stats Frame
         self.frm_stats = Frame(self.frm_container, bg='black')
@@ -95,11 +102,11 @@ class PlayerCard:
     def game_over(self):
         """Increase the winner's wins by one and reset the health of all players"""
         self.update_wins()
-        for player in self.player_cards:
+        for player in PlayerCard.player_cards:
             player.player.reset_health()
             player.update_health()
 
     def remove_player(self):
-        self.player_cards
+        PlayerCard.player_cards.remove(self)
         self.frm_container.destroy()
 
