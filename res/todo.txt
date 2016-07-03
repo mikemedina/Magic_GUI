@@ -1,0 +1,13 @@
+#             To Do
+#
+# 1. Implement menu button
+#     a. A way to add players on the fly
+#     b. Player color picker
+#         i. Error checking on color entry
+# 2. An 'X' to remove a player panel
+# 3. Fix documentation and indentation
+# 4. Fix frm_menu columnspan
+# 5. Fix win label overlap when single digit health
+# 6. Add way to edit history data
+#
+
