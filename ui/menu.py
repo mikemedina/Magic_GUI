@@ -1,3 +1,8 @@
+from player.player import Player
+from tkinter import *
+from ui.player_card import PlayerCard
+
+
 class Menu:
     """The settings menu"""
     def __init__(self, parent):
@@ -37,5 +42,5 @@ class Menu:
 
     def add_player(self, name, color):
         new_player = Player(name, color)
-        new_player_gui = PlayerGUI(self.parent, new_player)
+        new_player_gui = PlayerCard(self.parent, new_player)
 

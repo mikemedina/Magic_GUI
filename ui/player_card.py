@@ -4,7 +4,7 @@ from util.history import update_history
 
 class PlayerCard:
     """Player information"""
-    existing_players = []
+    player_cards = []
 
     def __init__(self, parent_frame, player):
         gen_font = ('Times', 30, 'bold')
@@ -14,10 +14,10 @@ class PlayerCard:
 
         # Player representations
         self.player = player
-        self.existing_players.append(self)
+        self.player_cards.append(self)
 
         # Container
-        col_num = len(self.existing_players)-1
+        col_num = len(self.player_cards)-1
         self.frm_container = Frame(parent_frame, bg='black')
         self.frm_container.grid(row=0, column=col_num)
 
@@ -95,11 +95,11 @@ class PlayerCard:
     def game_over(self):
         """Increase the winner's wins by one and reset the health of all players"""
         self.update_wins()
-        for p in self.existing_players:
-            p.player.reset_health()
-            p.update_health()
+        for player in self.player_cards:
+            player.player.reset_health()
+            player.update_health()
 
     def remove_player(self):
-        self.existing_players
+        self.player_cards
         self.frm_container.destroy()
 

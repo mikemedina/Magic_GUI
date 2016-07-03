@@ -1,6 +1,6 @@
 from ui.player_card import PlayerCard
 from tkinter import *
-
+import ui.menu
 
 class Window:
     """The main window"""
@@ -15,7 +15,7 @@ class Window:
         self.frm_menu_container.grid(row=1, columnspan=100, sticky=W+E)
 
         self.btn_menu = Button(self.frm_menu_container, text='Menu',
-            command=lambda: Menu(self.root), font=gen_font) 
+            command=lambda: ui.menu.Menu(self.root), font=gen_font) 
         self.btn_menu.configure(fg='white', bg='black', bd=0)
         self.btn_menu.pack(fill=X)
 

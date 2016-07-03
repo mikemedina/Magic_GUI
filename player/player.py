@@ -1,6 +1,3 @@
-from util.history import load_stats
-
-
 class Player:
 
     def __init__(self, name, color, health=20, wins=0):
@@ -8,15 +5,10 @@ class Player:
         self.name = name
         self.color = color
         self.health = health
-        self.wins = 0
-
-        try:
-            self.wins, self.health = load_stats(self)
-        except KeyError:
-            pass
+        self.wins = wins
 
     def __repr__(self):
-        return self.name
+        return self.name + ": {} wins".format(wins);
 
     def reset_health(self):
         """Set player's health to default"""
