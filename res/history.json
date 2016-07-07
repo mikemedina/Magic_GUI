@@ -1,1 +1,1 @@
-{"Medina": {"color": "blue", "wins": 3, "health": 10}, "Jimmy": {"color": "green", "wins": 2, "health": 5}, "Lori": {"color": "white", "wins": 1, "health": 0}, "Callie": {"health": 15, "wins": 4, "color": "purple"}}
+{"Mike": {"show": true, "health": 10, "color": "blue", "wins": 3}, "Callie": {"show": false, "health": 15, "color": "purple", "wins": 4}, "Lori": {"show": true, "health": 0, "color": "white", "wins": 1}, "Jimmy": {"show": false, "health": 5, "color": "green", "wins": 2}}

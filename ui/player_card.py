@@ -110,3 +110,6 @@ class PlayerCard:
         PlayerCard.player_cards.remove(self)
         self.frm_container.destroy()
 
+        self.player.show = False
+        update_history(self.player)
+

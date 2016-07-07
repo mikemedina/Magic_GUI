@@ -6,6 +6,7 @@ class Player:
         self.color = color
         self.health = health
         self.wins = wins
+        self.show = True
 
     def __repr__(self):
         return self.name + ": {} wins".format(wins);

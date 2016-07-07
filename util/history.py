@@ -1,5 +1,7 @@
 from json import dump, load
+from player.player import Player
 import logging
+
 
 path = "./res/history.json"
 
@@ -11,8 +13,9 @@ def update_history(player):
         history[player.name]['color'] = player.color
         history[player.name]['health'] = player.health
         history[player.name]['wins'] = player.wins
+        history[player.name]['show'] = player.show
     except KeyError:
-        history[player.name] = {'color': player.color, 'health': player.health, 'wins': player.wins}
+        history[player.name] = {'color': player.color, 'health': player.health, 'wins': player.wins, 'show': player.show}
 
     with open(path, 'w') as history_file:
         dump(history, history_file)
@@ -28,13 +31,11 @@ def load_player(player_name):
     return player_name, color, health, wins
 
 def load_all_players():
-    """Return a dictionary of all players from the history file"""
-    history = load_history();
+    """Return a list of all players"""
+    players = [Player(player_name, player['color'], player['health'], player['wins'])
+       for player_name, player in load_history().items() if player['show']]
 
-    wins = history[player_name]['wins']
-    health = history[player_name]['health']
-
-    return wins, health   
+    return players
 
 def load_history():
     """Load the history file and return it as a dictionary"""
@@ -43,4 +44,5 @@ def load_history():
         history = load(history_file)
 
     return history
+
 
