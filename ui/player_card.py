@@ -36,19 +36,19 @@ class PlayerCard:
 
         self.lbl_wins = Label(self.frm_wins, font=gen_font,
             text=self.player.wins, bg='black', fg='white')
-        self.lbl_wins.grid(row=0, column=1, rowspan=2, columnspan=2)
+        self.lbl_wins.grid(row=0, column=1, rowspan=2, columnspan=2, sticky=W)
 
         # Wins up
         self.btn_wins_up = Button(self.frm_wins, text='+', font=wins_font,
             command=lambda: self.update_wins(1))
         self.btn_wins_up.configure(fg='white', bg='black', bd=0)
-        self.btn_wins_up.grid(row=0, column=2, sticky=S)
+        self.btn_wins_up.grid(row=0, column=2, sticky=SE)
 
         # Wins down
         self.btn_wins_down = Button(self.frm_wins, text='-', font=wins_font,
             command=lambda: self.update_wins(-1))
         self.btn_wins_down.configure(fg='white', bg='black', bd=0)
-        self.btn_wins_down.grid(row=1, column=2, sticky=N)
+        self.btn_wins_down.grid(row=1, column=2, sticky=NE)
 
         # Stats Frame
         self.frm_stats = Frame(self.frm_container, bg='black')
