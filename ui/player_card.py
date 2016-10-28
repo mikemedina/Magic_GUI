@@ -7,10 +7,10 @@ class PlayerCard:
     player_cards = []
 
     def __init__(self, parent_frame, player):
-        gen_font = ('Times', 30, 'bold')
-        name_font = ('Times', 30)
-        health_font = ('Times', 70)
-        wins_font = ('Times', 16)
+        gen_font = ('Helvetica', 30, 'bold')
+        name_font = ('Helvetica', 30)
+        health_font = ('Helvetica', 70)
+        wins_font = ('Helvetica', 16)
 
         # Player representations
         self.player = player
